@@ -1,0 +1,489 @@
+<!--
+
+╭━━━┳╮╱╭┳━━━┳━━━┳━━━━┳╮╱╭┳━━━┳━╮╭━┳━━━┳━━━╮
+┃╭━╮┃┃╱┃┃╭━━┫╭━╮┃╭╮╭╮┃┃╱┃┃╭━━┫┃╰╯┃┃╭━━┫╭━╮┃
+┃╰━━┫╰━╯┃╰━━┫┃╱┃┣╯┃┃╰┫╰━╯┃╰━━┫╭╮╭╮┃╰━━┫╰━━╮
+╰━━╮┃╭━╮┃╭━━┫╰━╯┃╱┃┃╱┃╭━╮┃╭━━┫┃┃┃┃┃╭━━┻━━╮┃
+┃╰━╯┃┃╱┃┃╰━━┫╭━╮┃╱┃┃╱┃┃╱┃┃╰━━┫┃┃┃┃┃╰━━┫╰━╯┃
+╰━━━┻╯╱╰┻━━━┻╯╱╰╯╱╰╯╱╰╯╱╰┻━━━┻╯╰╯╰┻━━━┻━━━╯
+
+About page ⎾FASTIDIOUS⏌ by sheathemes @ tumblr
+
+- TERMS -
+
+I. Do NOT remove my credit from the index page. Keep it exactly where it is
+II. Do NOT take any part of my code to use for your personal designs
+III. Do NOT claim any part of my code as your own
+IV. NO redistrubuting of any of my code
+V. Editing is allowed. As long as it's NOT being claimed as your own
+ 
+CREDITS
+ 
+> Style-my-Tootips: https://manos.malihu.gr/style-my-tooltips-jquery-plugin/
+
+> Smoothscroll script: https://cdnjs.com/libraries/smoothscroll
+ 
+!-->
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ 
+<head>
+
+<!--Custom Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,600,600i|Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito+Sans:300,300i,400,400i,600,600i,700,700i|Titillium+Web:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Oxygen:300,400,700|Arimo:400,400i,700,700i|Lato:300,300i,400,400i,700,700i|Karla:400,400i,700,700i|Montserrat:300,300i,400,400i,500,500i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+<!--Custom Fonts-->
+ 
+<!--Homelinks Icons-->
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<!--Homelinks Icons-->
+ 
+    <title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="altertnate" type="application/rss+xml" href="{RSS}">
+    <meta http-equiv="x-dns-prefetch-control" content="off"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.6/SmoothScroll.min.js"></script>
+
+<style type="text/css">
+ 
+/*----------FADE-IN ANIMATION----------*/
+ 
+@keyframes fadein {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+ 
+@-moz-keyframes fadein { /* Firefox */
+    from {opacity:0;}
+    to {opacity:1;}
+}
+ 
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {opacity:0;}
+    to {opacity:1;}
+}
+ 
+@-o-keyframes fadein { /* Opera */
+    from {opacity:0;}
+    to {opacity: 1;}
+}
+ 
+/*----------TUMBLR CONTROLS----------*/
+ 
+iframe#tumblr_controls, .iframe-controls--desktop {
+    right: 10px !important;
+    top: 25px !important;
+    position: fixed !important;
+    z-index: 99999999999999999999 !important;
+    -webkit-filter: invert(100%);
+    -moz-filter: invert(100%);
+    -o-filter: invert(100%);
+    -webkit-transition: opacity 0.4s linear;opacity: 0.4;
+    -webkit-transition: all 0.8s ease-out;
+    -moz-transition: all 0.8s ease-out;
+    transition: all 0.8s ease-out;
+    display: none;
+}
+ 
+/*----------SCROLLBAR----------*/
+ 
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: #C0D1C2; /*change the color of the scrollbar*/
+    border: 2px solid #fff; /*change the color of the scrollbar background*/
+}
+ 
+::-webkit-scrollbar-track {
+    background: transparent;
+    border: 8px solid transparent;
+}
+ 
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+ 
+ 
+/*----------TOOLTIPS----------*/
+ 
+#s-m-t-tooltip {
+    max-width:300px;
+    padding:2px 5px;
+    margin: -20px 7px -2px 20px;
+    background-color: #C0D1C2;  /*change the background color of the tooltip*/
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:lowercase;
+    color: #fff;  /*change the text color of the tooltip*/
+    z-index:999999999999999999999999999999999999;
+    box-shadow: 0px 1px 1px 1px #e7e7e7; /*change the color of the tooltip shadow*/
+}
+ 
+/*----------TEXT SELECTION----------*/
+::selection {
+    background: #C0D1C2; /*change the color of the text selection background*/
+    color: #fff; /*change the color of the text selection*/
+}
+ 
+::-moz-selection {
+    background: #C0D1C2; /*change the color of the text selection background*/
+    color: #fff; /*change the color of the text selection*/
+}
+ 
+::-webkit-selection {
+    background: #C0D1C2; /*change the color of the text selection background*/
+    color: #fff; /*change the color of the text selection*/
+}
+ 
+/*----------THEME BASICS----------*/
+
+body {
+    color: #888;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 180%;
+    margin: 0;
+    text-align: left;
+    background: #fbfbfb url("") center; /*change the color of the main background and add a background image between the quotations*/
+    background-attachment: fixed;
+    background-repeat: repeat;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    animation: fadein 2.5s;
+    -moz-animation: fadein 2.5s; /* Firefox */
+    -webkit-animation: fadein 2.5s; /* Safari and Chrome */
+    -o-animation: fadein  2.5s; /* Opera */
+}
+ 
+b,strong {
+    color:#C0D1C2; /*change bold color here in your about section*/
+    font-weight: 700;
+}
+ 
+i,em {
+    color:#C0D1C2; /*change italic color here in your about section*/
+}
+ 
+u {
+    color:#C0D1C2; /*change underline color here in your about section*/
+}
+ 
+hr {
+    width: 30%;
+    height: 1px;
+    background-color: #f6f6f6; /*change horizontal color here in your about section*/
+    color: #f6f6f6; /*change horizontal color here in your about section*/
+    border: 0px solid transparent;
+}
+ 
+small,sub,sup {
+    font-size: 10px;
+}
+ 
+a {
+    color: #C0D1C2; /*change link color here in your about section*/
+    text-decoration:none;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+ 
+a:hover {
+    color: #aaaaaa;  /*change link color when you hover here in your about section*/
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+#topbar {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;  /*change color of the topbar*/
+    box-shadow: 0px 1px 5px 1px #e7e7e7;  /*change color of the topbar shadow*/
+    z-index: 100;
+}
+
+#maintitle {
+    font-size: 25px;
+    font-family: 'Lora', serif;
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 20px;
+}
+
+.morelinks {
+    margin-top: 20px;
+    text-align: center;
+}
+ 
+.morelinks a {
+    display: inline-block;
+    margin: 0px 25px;
+    color: #C0D1C2;  /*change link color here in your topbar*/
+    text-transform: lowercase;
+    font-size: 13px;
+    -webkit-transition: 0.8s ease;
+    -moz-transition: 0.8s ease;
+    -o-transition: 0.8s ease;
+    transition: 0.8s ease;
+}
+ 
+.morelinks a:hover {
+    color: #aaa;
+    -webkit-transition: 0.8s ease;
+    -moz-transition: 0.8s ease;
+    -o-transition: 0.8s ease;
+    transition: 0.8s ease;
+}
+ 
+.morelinks a:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 1px;
+    width: 0px;
+    background-color: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+.morelinks a:hover:after {
+    width: 100%;
+    background-color: #C0D1C2;  /*change color of the underline when your hover over the topbar links*/
+}
+
+.container {
+    width: 900px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #fff; /*change background color of the entire about container*/
+    box-shadow: 0px 1px 5px 1px #e7e7e7;  /*change about container shadow*/
+    height: 550px;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 270px;
+    height: 470px;
+    float: left;
+    border-right: 1px solid #f6f6f6;  /*change color of the sidebar border*/
+}
+
+#portrait {
+    width: 200px;
+    height: 290px;
+    border: 5px solid #fff;  /*change color of the border around the sidebar image*/
+    margin-top: -30px;
+    position: absolute;
+    z-index: 100;
+    margin-left: 30px;
+    background: url("https://static.tumblr.com/uh2chis/5Ukoswnvz/fastidious.png");  /*change sidebar image*/
+}
+
+
+.id {
+    position: absolute;
+    bottom: 0px;
+    padding: 20px;
+    width: 25.5%;
+    border-top: 1px solid #f6f6f6;  /*change border color under the sidebar image*/
+}
+
+.info {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.info b {
+    background-color: #C0D1C2;  /*change background color of your basic info*/
+    color: #fff;
+    padding: 2px 5px;
+    margin-right: 5px;
+}
+
+.about {
+    position: absolute;
+    margin-left: 270px;
+}
+
+#aes {
+    width: 100%;
+    background-color: #C0D1C2;  /*change color of the top border of the about continer*/
+    height: 80px;
+    position: relative;
+    top: 0;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 79%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 79%, 0% 100%);
+}
+
+.lnr-star {
+    font-size: 30px;
+    color: #fff;
+    background-color: #C0D1C2;  /*change background color of the star icon font*/
+    padding: 10px;
+    border: 5px solid #fff;  /*change color of the border around the icon font*/
+    position: absolute;
+    z-index: 100;
+    margin-top: -30px;
+    margin-left: -30px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    color: #C0D1C2;  /*change color of the about title*/
+}
+
+#bio {
+    text-align: justify;
+    padding: 10px 20px;
+    height: 340px;
+    width: 590px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-top: 1px solid #f6f6f6;  /*change color of the border under the about title*/
+}
+
+.footer {
+    width: 100%;
+    background-color: #C0D1C2;  /*change color of the footer*/
+    height: 10px;
+    position: fixed;
+    bottom: 0;
+    
+}
+ 
+/*----------THEME CREDIT/DO NOT REMOVE!!!---------*/
+ 
+.cred {
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+    z-index: 900;
+}
+
+.cred img {
+    width: 40px;
+    height: 40px;
+}
+
+</style>
+
+<!-----------Tooltips Script----------->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+<script src="https://static.tumblr.com/pbhn8p5/uhVos7fkg/tooltips.js"></script>
+<!-----------Tooltips Script----------->
+ 
+</head>
+
+<body>
+
+<div id="topbar"> <!-----------topbar----------->  
+
+<!-----------Where you can change the main title at the top-----------> 
+    <div id="maintitle">fastidious</div>
+<!-----------Where you can change the main title at the top-----------> 
+    
+    <div class="morelinks">
+    
+    <!-----------topbar links----------->
+    <a href="/">index</a>
+    <a href="/ask">ask</a>
+    <a href="/submit">submit</a>
+    <a href="/archive">archive</a>
+    <a href="/">link</a>
+    <a href="/">link</a>
+    <a href="/">link</a>
+    <!-----------topbar links----------->
+        
+    </div>
+        
+</div>  <!-----------topbar----------->  
+
+
+<div class="container">  <!-----------main container----------->  
+    <div id="aes"></div>
+    
+    <div class="sidebar">  <!-----------sidebar container----------->  
+        
+        <div id="portrait"></div> <!-----------sidebar image----------->  
+        
+              
+        <div class="id">
+       
+            <!-----------Where you can enter your basic info-----------> 
+            <span class="info"><b>Name</b> your name here</span>
+            <span class="info"><b>pronouns</b> your preferred pronouns</span>
+            <span class="info"><b>age</b> your age</span>
+            <span class="info"><b>location</b> your location</span>
+            <!-----------Where you can enter your basic info-----------> 
+             
+        </div>
+        
+    </div> <!-----------sidebar container----------->  
+    
+    <center><span class="lnr lnr-star"></span></center> <!-----------star iconr----------->  
+               
+    <div class="about">  <!-----------about container----------->  
+
+        
+         <!-----------Where you can change the title of your about section----------->     
+        <h1 class="title">a little about me</h1>
+         <!-----------Where you can change the title of your about section-----------> 
+  
+        
+            <div id="bio">  <!-----------bio container----------->  
+            
+ <!-----------Where your bio starts----------->    
+ 
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis nibh sed neque iaculis, vitae cursus purus luctus. Morbi scelerisque libero eu pellentesque aliquam. Aenean at risus id est ullamcorper lobortis vel vitae enim. Suspendisse eu libero et mauris elementum hendrerit. Suspendisse nec pulvinar nibh. Sed at convallis urna. Curabitur nec vestibulum odio. Pellentesque nisl elit, efficitur in facilisis sed, cursus eget ligula. Maecenas quis augue pharetra, viverra eros scelerisque, posuere eros. Fusce non nunc nec ex egestas porta et eget arcu. Phasellus pellentesque, purus in maximus viverra, est dolor euismod mauris, vel pulvinar magna est non odio. Suspendisse sollicitudin, metus sed luctus accumsan, odio turpis elementum eros, sed gravida odio turpis eu ipsum. Suspendisse eget lobortis dolor, ac laoreet ipsum. Aenean vulputate semper elit ut blandit. Sed quis est ultricies, congue tellus nec, porta augue. In efficitur vulputate dolor.
+        </p>
+        
+        <p>
+        Pellentesque dictum est vitae nisi suscipit dignissim sed et mi. Nam eget euismod nisl. Donec at ipsum vitae dui rutrum finibus sit amet eu eros. Phasellus eget ornare justo. Sed volutpat tellus quis arcu convallis molestie. Nullam cursus ex eu turpis vestibulum, vitae imperdiet dolor sagittis. Donec convallis facilisis cursus. Cras vulputate urna feugiat, lobortis urna ac, auctor nisl. Vivamus maximus interdum mauris, nec consectetur dui commodo sit amet. Donec vehicula ut enim at ullamcorper. Mauris volutpat eleifend sem gravida pellentesque. Duis sollicitudin condimentum urna sit amet faucibus. Praesent sapien ante, imperdiet et lacinia at, ornare in nulla. Cras eu condimentum nisi.
+        </p>
+
+ <!-----------Where your bio ends----------->   
+ 
+</div>  <!-----------bio container----------->   
+    
+    
+</div> <!-----------about container----------->  
+    
+<div class="footer"></div> <!-----------footer----------->  
+    
+</div> <!-----------main container----------->  
+
+<!-------------------DO NOT REMOVE THEME CREDIT!!!------------------->
+<a href="https://sheathemes.tumblr.com" class="cred" title="theme by sheathemes"><img src="https://static.tumblr.com/pbhn8p5/FZ7osqe6a/credit.png"></a>
+<!-------------------DO NOT REMOVE THEME CREDIT!!!------------------->
+ 
+</body>
+</html> <!---------------------------END--------------------------->
